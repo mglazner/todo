@@ -40,8 +40,9 @@ class MasterListTest < MiniTest::Unit::TestCase
 		item1=Item.new("walk the dog","Tuesday",false)
 		item2=Item.new("feed the cat","Wednesday",true)
 		tester=MasterList.new([item1,item2])
-		assert_equal(item1.task,tester.search_by_term("walk"))
-		assert_equal(item2.task,tester.search_by_term("cat"))
+		assert_equal([item1.task],tester.search_by_term("walk"))
+		assert_equal([item2.task],tester.search_by_term("cat"))
+		assert_equal([item2.task,item1.task],tester.search_by_term("the"))
 	end
 	
 end

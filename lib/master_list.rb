@@ -32,10 +32,10 @@ class MasterList
 	end
 	
 	def search_by_term(term)
-		temp=""
+		temp=[]
 		@list_items.each do |i|
 			if i.task.include?(term)
-				temp<<i.task
+				temp.insert(0,i.task)
 			end	
 		end
 		temp
