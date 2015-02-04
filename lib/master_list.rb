@@ -22,23 +22,15 @@ class MasterList
 	end
 	
 	def filter_by_date(day)
-		temp=""
-		@list_items.each do |i|
-			if i.due_date==day
-					temp<<i.task
-			end
+		@list_items.select do |i|
+			i.due_date==day
 		end
-		temp	
 	end
 	
 	def search_by_term(term)
-		temp=[]
-		@list_items.each do |i|
-			if i.task.include?(term)
-				temp.insert(0,i.task)
-			end	
+		@list_items.select do |i|
+			i.task.include?(term)
 		end
-		temp
 	end
 	
 end
