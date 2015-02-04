@@ -46,5 +46,3 @@ class MasterListTest < MiniTest::Unit::TestCase
 	end
 	
 end
-
-## DUE FEB 3, extend MasterList, add at least three methods and their tests, suggest: .complete (negation of current method) due by day? (direct comparison), and find by text, (anywhere in string contains keyword?)
