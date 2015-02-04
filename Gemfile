@@ -6,5 +6,7 @@ gem "sinatra"
 
 gem "rack", "~>1.5.0"
 
-gem "puma"
+group :production do 
+	gem "puma"
+end
 
