@@ -9,13 +9,12 @@ class App < Sinatra::Base
 	end
 
 	get("/") do 	
-		mlist.all.count.to_s
-		# "Hello World!"
+		put mlist
 	end
 	
-	get("/:day") do
-		params[:day]
-	end
+	# get("/:day") do
+		# params[:day]
+	# end
 
 	
 end
