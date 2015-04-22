@@ -25,11 +25,15 @@ class App < Sinatra::Base
 		# params[:day]
 	# end
 	
+  get '/templated' do
+    erb :template 
+  end
+  
 end
 
 
 
-# HW make the website print out the text of the items--with a header, not html: yet, print out two lists, a complete one and an an incomplete one. simultaneously. on the same page, yo.
+# HW convert my output using an erb template as built into Sinatra, so no binding
 
 # .each over an array returns the original array
 # .map returns an array of the things you wanted out of the original array

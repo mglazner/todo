@@ -1,0 +1,26 @@
+
+<br/>
+
+<%=Time.now.strftime("Today is %A, %m/%d/%Y")%><br/>
+
+<% undone_list=""
+   done_list=""
+   
+  (@mlist.complete).map do |i|
+    undone_list<<(i.task.to_s+"<br/>")
+  end
+  
+  (@mlist.incomplete).map do |i|
+    done_list<<(i.task.to_s+"<br/>")
+  end  
+    
+%>
+
+<br/><br/>
+
+<b><em>Still to be done:</em></b><br/><%= p undone_list %> 
+
+<br/><br/>
+
+<b><em>Already done:</em></b><br/><%= p done_list %>
+

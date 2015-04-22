@@ -40,10 +40,5 @@ class MasterList
 		end
 	end
   
-  def show_list
-    return @list_items.complete
-    return "~~~~~~~~~~~~~~~~~~~~"
-    return @list_items.incomplete    
-  end
 	
 end

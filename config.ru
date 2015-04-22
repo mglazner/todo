@@ -2,6 +2,7 @@ require "sinatra"
 require "./app"
 require "./lib/master_list"
 require "./lib/item"
+require "date"
 
 semi_permanent_list=MasterList.new([
 		Item.new("feed the dog","Tuesday",false),
