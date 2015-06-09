@@ -20,13 +20,17 @@ class App < Sinatra::Base
     end
     attempt
   end
-  
-	# get("/:day") do
-		# params[:day]
-	# end
 	
   get '/templated' do
     erb :template 
+  end
+  
+  post '/templated' do
+    puts params
+    erb :template
+  end
+   
+  get '/favicon.ico' do
   end
   
 end
