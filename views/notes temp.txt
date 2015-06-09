@@ -6,5 +6,4 @@ sinatra pass locals to erb
 
 HW:
 make the lists look list-y
-change the date to something in the format of Tuesday August 8, 2015
-
+change the date to something in the format of Tuesday and date
