@@ -7,24 +7,27 @@
     undone_list<<(i.task.to_s+"<br/>")
   end
   
+
+if env.has_key?("rack.request.form_hash")
   (@mlist.incomplete).map do |i|
     done_list<<(i.task.to_s+"<br/>")
-  end   
+  end
+  done_list<<(((env["rack.request.form_hash"])["newtask"]))
+else
+  (@mlist.incomplete).map do |i|
+    done_list<<(i.task.to_s+"<br/>")
+  end
+end
 %> <br/>
 
 <b><em>Still to be done:</em></b><br/><%= p undone_list %> <br/>
 
 <b><em>Already done:</em></b><br/><%= p done_list %> <br/>
-
+<br/><br/>
 <FORM METHOD="POST" >
-
 <INPUT Type="submit" VALUE="Add New Task" >
 <INPUT Type="text" name="newtask">
 </FORM>
 
-<%=
-if env.has_key?("rack.request.form_hash")
-  done_list<<(((env["rack.request.form_hash"])["newtask"]))
-end
-%>
+
 
