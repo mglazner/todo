@@ -3,7 +3,3 @@
 
 googling terms for syntax of template     
 sinatra pass locals to erb
-
-HW:
-make the lists look list-y
-change the date to something in the format of Tuesday and date

@@ -12,18 +12,20 @@
   end   
 %>
 
-<br/><br/>
+<br/>
 
 <b><em>Still to be done:</em></b><br/><%= p undone_list %> 
 
-<br/><br/>
+<br/>
 
 <b><em>Already done:</em></b><br/><%= p done_list %>
 
-<br/><br/>
+<br/>
 
-<FORM METHOD="post" >
+<FORM METHOD="POST" >
 
 <INPUT Type="submit" VALUE="Add New Task" >
 <INPUT Type="text" name="newtask">
 </FORM>
+
+<%= done_list<<((env["rack.request.form_hash"])["newtask"])%>
