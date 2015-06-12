@@ -10,17 +10,11 @@
   (@mlist.incomplete).map do |i|
     done_list<<(i.task.to_s+"<br/>")
   end   
-%>
+%> <br/>
 
-<br/>
+<b><em>Still to be done:</em></b><br/><%= p undone_list %> <br/>
 
-<b><em>Still to be done:</em></b><br/><%= p undone_list %> 
-
-<br/>
-
-<b><em>Already done:</em></b><br/><%= p done_list %>
-
-<br/>
+<b><em>Already done:</em></b><br/><%= p done_list %> <br/>
 
 <FORM METHOD="POST" >
 
@@ -28,4 +22,9 @@
 <INPUT Type="text" name="newtask">
 </FORM>
 
-<%= done_list<<((env["rack.request.form_hash"])["newtask"])%>
+<%=
+if env.has_key?("rack.request.form_hash")
+  done_list<<(((env["rack.request.form_hash"])["newtask"]))
+end
+%>
+
